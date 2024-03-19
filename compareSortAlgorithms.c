@@ -196,7 +196,7 @@ void bubbleSort(int* pData, int n)
 				pData[j]=pData[j+1];
 				pData[j+1]=temp;
 			}
-			printArray(pData, n);
+			//printArray(pData, n);
 		}
 	}
 }
@@ -209,7 +209,7 @@ void selectionSort(int* pData, int n)
 	// One by one move boundary of unsorted subarray
 	for (i = 0; i < n-1; i++)
 	{
-		printf("\nIteration# %d\n",i+1);
+		//printf("\nIteration# %d\n",i+1);
 		// Find the minimum element in unsorted array
 		min_idx = i;
 		for (j = i+1; j < n; j++){
@@ -222,7 +222,7 @@ void selectionSort(int* pData, int n)
 		temp = pData[i];
 		pData[i] = pData[min_idx];
 		pData[min_idx] = temp;
-		printArray(pData, n);
+		//printArray(pData, n);
 	}
 }
 
@@ -296,27 +296,27 @@ int main(void)
 		printf("Dataset Size : %d\n",dataSz);
 		printf("---------------------------\n");
 		
-		// printf("Selection Sort:\n");
-		// memcpy(pDataCopy, pDataSrc, dataSz*sizeof(int));
-		// extraMemoryAllocated = 0;
-		// start = clock();
-		// selectionSort(pDataCopy, dataSz);
-		// end = clock();
-		// cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-		// printf("\truntime\t\t\t: %.1lf\n",cpu_time_used);
-		// printf("\textra memory allocated\t: %d\n",extraMemoryAllocated);
-		// printArray(pDataCopy, dataSz);
+		printf("Selection Sort:\n");
+		memcpy(pDataCopy, pDataSrc, dataSz*sizeof(int));
+		extraMemoryAllocated = 0;
+		start = clock();
+		selectionSort(pDataCopy, dataSz);
+		end = clock();
+		cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+		printf("\truntime\t\t\t: %.1lf\n",cpu_time_used);
+		printf("\textra memory allocated\t: %d\n",extraMemoryAllocated);
+		printArray(pDataCopy, dataSz);
 		
-		// printf("Insertion Sort:\n");
-		// memcpy(pDataCopy, pDataSrc, dataSz*sizeof(int));
-		// extraMemoryAllocated = 0;
-		// start = clock();
-		// insertionSort(pDataCopy, dataSz);
-		// end = clock();
-		// cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-		// printf("\truntime\t\t\t: %.1lf\n",cpu_time_used);
-		// printf("\textra memory allocated\t: %d\n",extraMemoryAllocated);
-		// printArray(pDataCopy, dataSz);
+		printf("Insertion Sort:\n");
+		memcpy(pDataCopy, pDataSrc, dataSz*sizeof(int));
+		extraMemoryAllocated = 0;
+		start = clock();
+		insertionSort(pDataCopy, dataSz);
+		end = clock();
+		cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+		printf("\truntime\t\t\t: %.1lf\n",cpu_time_used);
+		printf("\textra memory allocated\t: %d\n",extraMemoryAllocated);
+		printArray(pDataCopy, dataSz);
 
 		printf("Bubble Sort:\n");
 		memcpy(pDataCopy, pDataSrc, dataSz*sizeof(int));
@@ -329,27 +329,27 @@ int main(void)
 		printf("\textra memory allocated\t: %d\n",extraMemoryAllocated);
 		printArray(pDataCopy, dataSz);
 		
-		// printf("Merge Sort:\n");
-		// memcpy(pDataCopy, pDataSrc, dataSz*sizeof(int));
-		// extraMemoryAllocated = 0;
-		// start = clock();
-		// mergeSort(pDataCopy, 0, dataSz - 1);
-		// end = clock();
-		// cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-		// printf("\truntime\t\t\t: %.1lf\n",cpu_time_used);
-		// printf("\textra memory allocated\t: %d\n",extraMemoryAllocated);
-		// printArray(pDataCopy, dataSz);
+		printf("Merge Sort:\n");
+		memcpy(pDataCopy, pDataSrc, dataSz*sizeof(int));
+		extraMemoryAllocated = 0;
+		start = clock();
+		mergeSort(pDataCopy, 0, dataSz - 1);
+		end = clock();
+		cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+		printf("\truntime\t\t\t: %.1lf\n",cpu_time_used);
+		printf("\textra memory allocated\t: %d\n",extraMemoryAllocated);
+		printArray(pDataCopy, dataSz);
 
-        //         printf("Heap Sort:\n");
-		// memcpy(pDataCopy, pDataSrc, dataSz*sizeof(int));
-		// extraMemoryAllocated = 0;
-		// start = clock();
-		// heapSort(pDataCopy, 0, dataSz - 1);
-		// end = clock();
-		// cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-		// printf("\truntime\t\t\t: %.1lf\n",cpu_time_used);
-		// printf("\textra memory allocated\t: %d\n",extraMemoryAllocated);
-		// printArray(pDataCopy, dataSz);
+                printf("Heap Sort:\n");
+		memcpy(pDataCopy, pDataSrc, dataSz*sizeof(int));
+		extraMemoryAllocated = 0;
+		start = clock();
+		heapSort(pDataCopy, 0, dataSz - 1);
+		end = clock();
+		cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+		printf("\truntime\t\t\t: %.1lf\n",cpu_time_used);
+		printf("\textra memory allocated\t: %d\n",extraMemoryAllocated);
+		printArray(pDataCopy, dataSz);
 		
 		DeAlloc(pDataCopy);
 		DeAlloc(pDataSrc);
